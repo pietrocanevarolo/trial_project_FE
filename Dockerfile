@@ -16,5 +16,9 @@ COPY / /app/
 # Costruisce il progetto React
 RUN npm run build
 
-# Imposta il comando per avviare il server
-CMD ["npm", "start"]
+EXPOSE 80
+
+# this is not intended for production but to get you started fast
+# you should use a proper web server in production like nginx
+# https://docs.divio.com/how-to/production-server
+CMD ["npm", "run", "start", "--", "--host", "0.0.0.0", "--port", "80"]

@@ -45,7 +45,7 @@ const ProductScreen = () => {
 
     try {
       const response = await axios.get(
-        `http://localhost:8000/api/products/?search=${search}&sort=${sortField}&order=${sortOrder}`
+        `https://trialprojectbe-stage.us.aldryn.io/api/products/?search=${search}&sort=${sortField}&order=${sortOrder}`
       );
       setProducts(response.data);
     } catch (error) {
@@ -64,7 +64,7 @@ const ProductScreen = () => {
   const handleSelect = async (id, selected) => {
     try {
       const response = await axios.patch(
-        `http://localhost:8000/api/products/`,
+        `https://trialprojectbe-stage.us.aldryn.io/api/products/`,
         {
           id: id,
           selected: !selected,
