@@ -29,7 +29,7 @@ const ProductScreen = () => {
   const [sortField, setSortField] = useState("name");
   const [sortOrder, setSortOrder] = useState("asc");
   const [user] = useState(
-    JSON.parse(localStorage.getItem("user")) || {
+    JSON.parse(sessionstorage.getItem("user")) || {
       username: "",
       name: "",
       email: "",
@@ -84,8 +84,8 @@ const ProductScreen = () => {
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
+    sessionstorage.removeItem("token");
+    sessionstorage.removeItem("user");
     window.location.href = "/";
   };
 
