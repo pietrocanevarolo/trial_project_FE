@@ -20,12 +20,12 @@ const Login = () => {
     if (response.ok) {
       const data = await response.json();
 
-      // Save the token in sessionStorage
-      sessionStorage.setItem("token", data.access);
+      // Save the token in localStorage
+      localStorage.setItem("token", data.access);
 
-      // Save the user in sessionStorage
+      // Save the user in localStorage
       const user = data.user || { username: "", name: "", email: "" };
-      sessionStorage.setItem("user", JSON.stringify(user));
+      localStorage.setItem("user", JSON.stringify(user));
 
       // Navigate to the products page
       navigate("/products");
