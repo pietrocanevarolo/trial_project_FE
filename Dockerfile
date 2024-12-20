@@ -5,13 +5,13 @@ FROM node:18-alpine
 WORKDIR /app
 
 # Copia i file di dipendenze
-COPY frontend/package.json frontend/package-lock.json /app/
+COPY /package.json /package-lock.json /app/
 
 # Installa le dipendenze
 RUN npm install
 
 # Copia il resto del codice
-COPY frontend /app/
+COPY / /app/
 
 # Costruisce il progetto React
 RUN npm run build
