@@ -7,7 +7,7 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const token = sessionstorage.getItem('token');
+    const token = sessionStorage.getItem('token');
     if (!token) {
       navigate('/');
     }
